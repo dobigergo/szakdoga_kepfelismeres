@@ -1,4 +1,4 @@
-from PIL import Image
+import cv2
 import numpy as np
 import pytesseract
 import falcon
@@ -36,7 +36,7 @@ class Response:
     def on_get(self,req,resp):
         pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
-        img = Image.open('orvosi-tablazat-1.jpg')
+        img = cv2.imread('orvosi-tablazat-1.jpg')
 
         length, width, dim = np.shape(img)
 
