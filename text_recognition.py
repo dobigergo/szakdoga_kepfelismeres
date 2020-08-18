@@ -34,8 +34,7 @@ def make_json(wordList1, wordList2):
 class Response:
 
     def on_get(self,req,resp):
-        pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-
+        
         img = cv2.imread('orvosi-tablazat-1.jpg')
 
         length, width, dim = np.shape(img)
