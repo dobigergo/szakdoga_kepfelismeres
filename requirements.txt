@@ -1,5 +1,5 @@
 gunicorn
-pytessaract
+pytesseract
 numpy
 cv2
 falcon
