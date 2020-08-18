@@ -1,0 +1,5 @@
+gunicorn
+pytessaract
+numpy
+cv2
+falcon
