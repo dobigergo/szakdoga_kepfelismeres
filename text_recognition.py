@@ -53,5 +53,5 @@ class Response:
 
        
 api = falcon.API()
-response = response()
+response = Response()
 api.add_route('/', response)
