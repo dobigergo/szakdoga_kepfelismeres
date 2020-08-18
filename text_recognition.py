@@ -17,7 +17,7 @@ class TranslationEntries:
     word1 = ""
     word2 = ""
     
-    __init__(self,word1,word2):
+    def __init__(self,word1,word2):
         self.word1 = word1
         self.word2 = word2
 
