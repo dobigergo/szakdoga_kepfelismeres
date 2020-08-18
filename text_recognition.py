@@ -1,4 +1,4 @@
-from cv2 import imread
+import cv2
 import numpy as np
 import pytesseract
 import falcon
