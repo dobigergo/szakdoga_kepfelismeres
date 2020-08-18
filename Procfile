@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:8000 text_recognition:api
+web: gunicorn text_recognition:api
