@@ -22,7 +22,7 @@ def make_json(wordList1, wordList2):
         resultDict["word2"]=wordList2[i]
         translationList.append(resultDict)
             
-    return json.dumps(translationList)
+    return json.dumps(translationList, ensure_ascii=False).encode('utf8')
     
 class Response:
 
