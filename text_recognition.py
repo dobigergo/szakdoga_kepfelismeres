@@ -35,7 +35,7 @@ class Response:
 
     def on_get(self,req,resp):
         
-        pytesseract.pytesseract.tesseract_cmd = ‘/app/.apt/usr/bin/tesseract’ 
+        pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract' 
         
         img = cv2.imread('orvosi-tablazat-1.jpg')
 
