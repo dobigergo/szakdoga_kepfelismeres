@@ -17,15 +17,11 @@ def make_json(wordList1, wordList2):
     
     translationList = []
     for i in range(len(wordList1)):
-        resultDict
+        resultDict = {}
         resultDict["word1"]=wordList1[i]
         resultDict["word2"]=wordList2[i]
         translationList.append(resultDict)
-        
-        
-        
-        
-        
+            
     return json.dumps(translationList)
     
 class Response:
