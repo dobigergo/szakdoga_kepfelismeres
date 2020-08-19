@@ -12,21 +12,18 @@ def filter_empty_strings(word):
     else:
         return True
         
-class TranslationEntries:
-    
-    word1 = ""
-    word2 = ""
-    
-    def __init__(self,word1,word2):
-        self.word1 = word1
-        self.word2 = word2
-
 
 def make_json(wordList1, wordList2):
     
     translationList = []
     for i in range(len(wordList1)):
-        translationList.append(TranslationEntries(wordList1[i],wordList2[i]).__dict__)
+        resultDict
+        resultDict["word1"]=wordList1[i]
+        resultDict["word2"]=wordList2[i]
+        translationList.append(resultDict)
+        
+        
+        
         
         
     return json.dumps(translationList)
