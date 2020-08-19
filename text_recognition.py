@@ -29,7 +29,7 @@ def make_json(wordList1, wordList2):
         translationList.append(TranslationEntries(wordList1[i],wordList2[i]))
         
         
-    return json.dumps(translationList)
+    return json.dumps(translationList.__dict__)
     
 class Response:
 
