@@ -26,7 +26,7 @@ def make_json(wordList1, wordList2):
     
     translationList = []
     for i in range(len(wordList1)):
-        translationList.add(TranslationEntries(wordList1[i],wordList2[i]))
+        translationList.append(TranslationEntries(wordList1[i],wordList2[i]))
         
         
     return json.dumps(translationList)
