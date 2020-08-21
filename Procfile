@@ -1,1 +1,1 @@
-web: gunicorn text_recognition:app
+web: gunicorn text_recognition:app --preload
