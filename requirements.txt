@@ -2,4 +2,4 @@ gunicorn
 pytesseract
 numpy
 opencv-python-headless
-falcon
+flask
