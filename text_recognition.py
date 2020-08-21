@@ -37,7 +37,7 @@ def on_get():
     length, width, dim = np.shape(img)
     img_hun = img[0:length, 0:width//2]
     img_eng = img[0:length, width//2:width]
-    text_eng = pytesseract.image_to_string(img_eng
+    text_eng = pytesseract.image_to_string(img_eng, lang= "eng")
     text_hun = pytesseract.image_to_string(img_hun, lang = "hun")
     text_hun_set = list(filter(filter_empty_strings,text_hun.split("\n"))
     text_eng_set = list(filter(filter_empty_strings,text_eng.split("\n")))
