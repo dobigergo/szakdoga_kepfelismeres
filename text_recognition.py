@@ -43,3 +43,8 @@ def on_get():
     text_eng_set = list(filter(filter_empty_strings,text_eng.split("\n")))
     
     return make_json(text_hun_set,text_eng_set)
+
+
+
+if __name__ == '__main__':
+    app.run()
