@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 import pytesseract
-import flask
+from flask import Flask
 import json
 
 
