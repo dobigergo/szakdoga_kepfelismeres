@@ -1,1 +1,1 @@
-web: gunicorn text_recognition:api
+web: gunicorn text_recognition.wsgi
