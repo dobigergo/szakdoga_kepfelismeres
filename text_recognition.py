@@ -48,7 +48,7 @@ def on_get():
 def on_post():
 
     raw_data = request.get_data()
-    return type(raw_data)
+    return str(type(raw_data))
 
     
 
