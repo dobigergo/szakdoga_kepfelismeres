@@ -4,6 +4,7 @@ import pytesseract
 from flask import Flask
 import json
 
+#comment csak hogy tudjak deployolni
 
 app = Flask(__name__)
 
