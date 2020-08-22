@@ -2,11 +2,12 @@ import cv2
 import numpy as np
 import pytesseract
 from flask import Flask
+from flask import request
 import json
 
-#comment csak hogy tudjak deployolni
-
 app = Flask(__name__)
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+
 
 def filter_empty_strings(word):
     empty = ['',' ', '/n']
@@ -28,11 +29,9 @@ def make_json(wordList1, wordList2):
             
     return json.dumps(translationList, ensure_ascii=False).encode('utf8')
     
-@app.route('/')
+@app.route('/' , methods = ["GET"])
 def on_get():
         
-    pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-
     img = cv2.imread('orvosi-tablazat-1.jpg')
 
     length, width, dim = np.shape(img)
@@ -44,6 +43,14 @@ def on_get():
     text_eng_set = list(filter(filter_empty_strings,text_eng.split("\n")))
     
     return make_json(text_hun_set,text_eng_set)
+
+@app.route('/img_process', methods = ["POST"])
+def on_post():
+
+    raw_data = request.get_data()
+    return type(raw_data)
+
+    
 
 
 
