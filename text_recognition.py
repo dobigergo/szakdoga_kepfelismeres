@@ -48,8 +48,7 @@ def on_get():
 def on_post():
 
     raw_data = request.get_data()
-    data = np.frombuffer(raw_data)
-    img = cv2.imdecode(data)
+    img = cv2.imdecode(raw_data)
     
     
     length, width, dim = np.shape(img)
