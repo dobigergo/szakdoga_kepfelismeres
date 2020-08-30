@@ -6,7 +6,10 @@ from flask import request
 import json
 
 app = Flask(__name__)
-pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
+
+#production path: '/app/.apt/usr/bin/tesseract'
+#development path: 'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files\Tesseract-OCR\\tesseract.exe'
 
 
 def filter_empty_strings(word):
@@ -47,9 +50,7 @@ def on_get():
 @app.route('/img_process', methods = ["POST"])
 def on_post():
 
-    raw_data = request.get_data()
-    img = cv2.imdecode(raw_data, cv2.IMREAD_GRAYSCALE)
-    
+    img = cv2.imread('orvosi-tablazat-1.jpg')
     
     length, width, dim = np.shape(img)
     img_hun = img[0:length, 0:width//2]
@@ -58,6 +59,10 @@ def on_post():
     text_hun = pytesseract.image_to_string(img_hun, lang = "hun")
     text_hun_set = list(filter(filter_empty_strings,text_hun.split("\n")))
     text_eng_set = list(filter(filter_empty_strings,text_eng.split("\n")))
+    
+    
+    
+
     
     return make_json(text_hun_set,text_eng_set)
     
