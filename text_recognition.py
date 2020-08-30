@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 #production path: '/app/.apt/usr/bin/tesseract'
 #development path: 'C:\Program Files\Tesseract-OCR\tesseract.exe'
-pytesseract.pytesseract.tesseract_cmd = 'C:\Program Files\Tesseract-OCR\\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 
 def filter_empty_strings(word):
@@ -59,9 +59,6 @@ def on_post():
     text_hun = pytesseract.image_to_string(img_hun, lang = "hun")
     text_hun_set = list(filter(filter_empty_strings,text_hun.split("\n")))
     text_eng_set = list(filter(filter_empty_strings,text_eng.split("\n")))
-    
-    
-    
 
     
     return make_json(text_hun_set,text_eng_set)
