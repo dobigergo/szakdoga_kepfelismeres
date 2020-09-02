@@ -27,9 +27,9 @@ def make_json(wordList1, wordList2):
     for i in range(len(wordList1)-1):
         resultDict = {}
         resultDict["word1"]=wordList1[i]
-        resultDict["language1"] = 1L
+        resultDict["language1"] = 1
         resultDict["word2"]=wordList2[i]
-        resultDict["language2"] = 2L
+        resultDict["language2"] = 2
         translationList.append(resultDict)
             
     return json.dumps(translationList, ensure_ascii=False).encode('utf8')
