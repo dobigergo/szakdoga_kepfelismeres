@@ -52,7 +52,7 @@ def on_get():
 @app.route('/img_process', methods = ["POST"])
 def on_post():
 
-    request_dict = json.loads(request.json)
+    request_dict = request.json
     im_bytes = base64.b64decode(request_dict["data"])
     im_arr = np.frombuffer(im_bytes, dtype=np.uint8)
     img = cv2.imdecode(im_arr, flags=cv2.IMREAD_COLOR)
