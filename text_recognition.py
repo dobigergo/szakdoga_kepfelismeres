@@ -24,7 +24,7 @@ def filter_empty_strings(word):
 def make_json(wordList1, wordList2):
     
     translationList = []
-    for i in range(len(wordList1)-1):
+    for i in range(min(len(wordList1)-1,len(wordList2)-1)):
         resultDict = {}
         resultDict["word1"]=wordList1[i]
         resultDict["language1"] = 1
